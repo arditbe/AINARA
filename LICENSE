@@ -1,0 +1,63 @@
+AINARA Open Source License
+
+Copyright (c) 2025 Ardit Berisha
+
+AINARA is an open-source project created by Ardit Berisha to support Roma people worldwide.
+
+1. Permissions
+
+You are free to use, copy, modify, and distribute this project, provided that:
+
+The project name AINARA must remain unchanged.
+
+All works derived from AINARA must clearly state “Powered by AINARA”.
+
+The original author credit Ardit Berisha must always be retained.
+
+2. Modifications Allowed
+
+You may freely modify and customize:
+
+Graphical User Interface (GUI)
+
+Fonts, colors, backgrounds, and styling
+
+You may not change or rebrand:
+
+The name AINARA
+
+The official models provided in this repository
+
+3. Model Training Rules
+
+If you train new models using this project:
+
+You must only use the training scripts provided in this repository.
+
+New models must follow the naming convention:
+NARA-[your-model-name]
+
+4. Prohibited Uses
+
+AINARA and its models must not be used for:
+
+Any discriminatory purposes
+
+Especially against Roma people or other marginalized groups
+
+Violation of this clause may result in liability for damages, including a fine of up to $50,000 USD.
+
+5. Liability Disclaimer
+
+This software is provided “AS IS”, without any warranties, express or implied.
+The author shall not be held liable for any damages arising from the use of this software.
+
+6. Enforcement
+
+By using this software, you agree to these terms.
+Failure to comply will result in loss of license rights and potential legal action.
+
+Author
+
+AINARA Project
+Ardit Berisha (2025)
