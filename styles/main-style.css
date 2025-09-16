@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fredoka:wght@300..700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white !important;
+}
+
+html, body {
+  /* Force full-viewport usage with no scroll */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+ background: linear-gradient(to bottom, #0F1523, #37242D);
+  font-family: 'Fredoka', sans-serif;
+  position: relative; /* So absolute children anchor to body */
+  padding-top: 5px;
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 60px;
+  padding: 0 10px;
+}
+
+/* Center the title absolutely */
+nav h2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 20px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 25px;
+}
+
+/* Button styles */
+nav button {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+nav button img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Group left and right buttons properly */
+nav .back {
+  margin-right: auto;
+}
+
+nav button:not(.back) {
+  margin-left: 10px;
+}
+
+/*Once only that image will paear until the user starts typing*/
+
+
+.onceonly{
+  display: none; /*e hek tani e bon flex*/
+    width: 100%;
+    height: auto;
+    margin-top: 2cm;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.onceonly img{
+    width: 80%;
+}
+
+.onceonly h1{
+    font-weight: 400;
+    position: relative;
+    top: -4cm;
+}
+
+/*INPUT CSS*/
+.inputbox {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5cm;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  overflow: hidden; /* Prevent ::before from spilling out */
+}
+.inputbox::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(12px);
+
+  pointer-events: none;
+  z-index: 0;
+
+  /* Glow fade effect using multiple shadows */
+  box-shadow:
+    0 -10px 20px rgba(255, 255, 255, 0.25),
+    0 -20px 40px rgba(255, 255, 255, 0.15),
+    0 -40px 80px rgba(255, 255, 255, 0.10);
+}
+
+
+.inputbox .input {
+  position: relative;
+  z-index: 2; /* ensure it is above the ::before */
+  width: 85%;
+  height: 4cm;
+  background: #0f1523cb;
+  border-radius: 30px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ::before is applied on .inputbox to go behind .input */
+.inputbox::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88%;
+  height: 4cm;
+  z-index: 1;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #FF6200, #B140FF, #F70352);
+  opacity: 0.6;
+  filter: blur(10px);
+  background-size: 300% 300%;
+  animation: smoothGloww 20s ease-in-out infinite, bubbleFloatt 18s ease-in-out infinite;
+}
+
+@keyframes smoothGloww {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bubbleFloatt {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  25% {
+    transform: translate(-52%, -48%);
+  }
+  50% {
+    transform: translate(-48%, -52%);
+  }
+  75% {
+    transform: translate(-51%, -49%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+.input .text{
+    width: 100%;
+    height: 50%;
+display: flex;
+justify-content: center;
+}
+
+.input .text  input{
+    width: 100%;
+    border: thick;
+    background: transparent;
+    font-family: 'Fredoka', sans-serif;
+    padding-left: 20px;
+    outline: none;
+    padding-right: 10px;
+    font-size: 15px;
+}
+
+.input .controls{
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+
+.controls .tools{
+    width: 70%;
+    height: 2cm;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.tools button{
+    width: 33px;
+    height: 33px;
+    margin-left: 10px;
+    border: 1px solid white;
+    border-radius: 12px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tools button img{
+    width: 18px;
+}
+
+.controls .sendcon{
+        width: 30%;
+    height: 2cm;
+     display: flex;
+    align-items: center;
+}
+
+
+.sendcon button{
+    width: 33px;
+    height: 33px;
+    margin-left: 10px;
+    border: 1px solid white;
+    border-radius: 12px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sendcon button img{
+    width: 18px;
+}
+
+.sendcon .sendbtn{
+    background: white !important;
+
+}
+
+/*chat system*/
+.chatsystem {
+  width: 100%;
+  height: calc(100% - 6.1cm);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+  position: relative;
+  z-index: 0; /* Reset parent stacking context */
+}
+
+.chatsystem .chatfromuser {
+  align-self: flex-end;
+  max-width: 70%;
+  padding: 12px 16px;
+  background: #1D273D;
+  color: white;
+  border-radius: 20px;
+  margin: 5px 0;
+  word-wrap: break-word;
+  position: relative;
+  z-index: 5; /* Above AINARA’s glow but below AINARA’s content */
+}
+
+.chatsystem .chatfromuser p {
+  position: relative;
+  z-index: 6; /* Ensure user text stays above glow */
+  margin: 0; /* Normalize margins */
+}
+.chatsystem .chatfromainara-wrapper {
+  position: relative;
+  align-self: center;
+  width: 95%;
+  margin: 25px 0;
+}
+
+.chatsystem .chatfromainara-glow {
+  position: absolute;
+  width: 100%;
+  height: 98%;
+  border-radius: 30px;
+  z-index: 9 !important;
+  pointer-events: none;
+  background: linear-gradient(135deg, #FF6200, #B140FF, #F70352);
+  background-size: 300% 300%;
+  animation: smoothGlow 20s ease-in-out infinite;
+  filter: blur(10px);
+}
+
+.chatsystem .chatfromainara {
+  position: relative;
+  width: 100%;
+  padding: 15px 15px;
+  border-radius: 30px;
+  z-index: 10 !important;
+  overflow: visible;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  background: #0f1523e7;
+}
+
+.chatsystem .chatfromainara * {
+  position: relative;
+  z-index: 11 !important;
+}
+
+
+@keyframes smoothGlow {
+  0% {
+    background-position: 0% 50%;
+    filter: blur(10px) brightness(1) saturate(1);
+  }
+  25% {
+    background-position: 50% 100%;
+    filter: blur(10px) brightness(1.1) saturate(1.2);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: blur(10px) brightness(1.2) saturate(1.3);
+  }
+  75% {
+    background-position: 50% 0%;
+    filter: blur(10px) brightness(1.1) saturate(1.2);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: blur(10px) brightness(1) saturate(1);
+  }
+}
+
+.chatsystem .chatfromainara-glow {
+  position: absolute;
+  width: 100%;
+  height: 98%;
+  border-radius: 30px;
+  z-index: 9 !important;
+  pointer-events: none;
+  background: linear-gradient(135deg, #FF6200, #B140FF, #F70352);
+  background-size: 300% 300%;
+  animation: smoothGlow 10s ease-in-out infinite;
+  filter: blur(10px);
+}
+
+.feedback{
+  margin-left: 20px;
+  position: relative;
+  top: -10px;
+}
+
+.feedback button{
+  background: transparent;
+  border: thick;
+  margin-left: 10px;
+}
+
+.feedback img{
+  width: 20px;
+}
+
+/*conversations*/
+
+.conversations{
+  z-index: 1100;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+ background: linear-gradient(to bottom, #0f1523a9, #37242db6);
+ backdrop-filter: blur(10px);
+ display: flex;
+ flex-direction: column;
+}
+
+.conversations .search{
+  margin-top: 30px;
+  width: 85%;
+  height: 3cm;
+  background: #1C263D;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.search button{
+width: 100%;
+height: 40px;
+font-family: 'Fredoka', sans-serif;
+border: thick;
+outline: none;
+background: transparent;
+display: flex;
+align-items: center;
+}
+
+.search button img{
+  width: 20px;
+  margin-right: 10px;
+}
+
+
+.pastchats{
+  margin-top: 30px;
+  width: 85%;
+  height: 15cm;
+  background: #1C263D;
+  border-radius: 20px;
+  display: flex;
+  align-items: le;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 20px;
+  overflow: auto;
+}
+
+.pastchats button{
+width: 100%;
+height: 40px;
+font-family: 'Fredoka', sans-serif;
+border: thick;
+outline: none;
+background: transparent;
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.pastchats button img{
+  width: 20px;
+  margin-right: 20px;
+}
+
+#conversationsPanel {
+  z-index: 1000;
+  opacity: 0 !important;
+  display: none !important;
+  transition: opacity 0.4s;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+}
+#conversationsPanel.visible {
+  display: block !important;
+  opacity: 1 !important;
+}
